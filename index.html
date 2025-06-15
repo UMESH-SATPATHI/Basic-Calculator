@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <p class="tagname">Calculus</p>
+        <nav>
+            <a href="index.html" id="link">Home</a>
+            <div class="calculation-select">
+                <select id="calculationType" onchange="if(this.value) location.hash=this.value;">
+                    <option value="" disabled selected>Calculation</option>
+                    <option value="#bmi-calculator">BMI Calculator</option>
+                    <option value="#si-calculator">Interest Calculator</option>
+                    <option value="cTOfcalculator">Temp. Converter</option>
+                    <option value="kmTomcalculator">Km to Miles</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="top-section">
+            <img src="" alt="carousel" id="img1">
+            <h1><span style="font-size: 4.5rem;">Calculate</span><br>Anything</h1>
+            <p id="p1">stay hassle free</p>
+        </section>
+
+        <section class="bottom-section">
+            <div class="box" id="bmi-calculator">
+                <p id="p2">BMI Calculator</p>
+                <input type="number" placeholder="enter your weight in kg" id="weight">
+                <input type="number" placeholder="enter your height in cm" id="height">
+                <div class="result-section">
+                    <button class="box-button" onclick="calculateBMI()">Calculate BMI</button>
+                    <span class="result">Result</span>
+                </div>
+            </div>
+            <div class="box" id="bill-calculator">
+                <p id="p2">Bill Calculator</p>
+                <input type="number" placeholder="Enter the Units used" id="units">
+                <input type="number" placeholder="Enter the price/unit" id="price/unit">
+                <div class="result-section">
+                    <button class="box-button" onclick="billCalculator()">Calculate</button>
+                    <span class="result">Result</span>
+                </div>
+            </div>
+            <div class="box" id="cTOfcalculator">
+                <p id="p2">Celsius->Farenhite</p>
+                <input type="number" placeholder="Enter temp. in Celsius" id="c">
+                <div class="result-section">
+                    <button class="box-button" onclick="celsiusToFarenhite()">Convert</button>
+                    <span class="result">Result</span>
+                </div>
+            </div>
+            <div class="box" id="kmTomcalculator">
+                <p id="p2">Km -> Miles</p>
+                <input type="number" placeholder="Enter range in Km" id="km">
+                <div class="result-section">
+                    <button class="box-button" onclick="kmToMiles()">Convert</button>
+                    <span class="result">Result</span>
+                </div>
+            </div>
+            <div class="box" id="si-calculator">
+                <p id="p2">Simple Interest</p>
+                <input id="principal" type="number" placeholder="Principal in Rupees" style="display: flex; flex-wrap: wrap;">
+                <input id="rateOfInterest" type="number" placeholder="ROI in %" style="display: flex; flex-wrap: wrap;">
+                <input id="Time" type="number" placeholder="Time in Years" style="display: flex; flex-wrap: wrap;">
+                <div class="result-section">
+                    <button class="box-button" onclick="calculateInterest()">Calculate</button>
+                    <span class="result">Result</span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="modal" id="dialog" style="display: none;">
+        <div class="modalcontent">
+            <button class="close"  id="x" onclick="hideDialogue()">&times;</button>
+            <img src="" alt="image" class="bmi-image">
+            <p class="modal-heading">Modal details</p>
+            <p class="modal-content">Modal contents</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
