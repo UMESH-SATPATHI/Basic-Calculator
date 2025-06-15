@@ -65,9 +65,9 @@ function calculateBMI() {
                 <li>Hydrate well: water > juices or sodas</li>
                 <li>Eat smaller, more frequent meals to avoid overeating</li>
                 </ul>`, "obesity.jpg");
-                break;
-                default:
-                    alert("please enter correct details");
+            break;
+        default:
+            alert("please enter correct details");
     }
 }
 function showDialogue(title, content, image) {
@@ -85,8 +85,8 @@ function hideDialogue() {
     document.getElementsByClassName("result")[0].textContent = "Result";
 }
 
-function billCalculator(){
-    if (parseFloat(document.getElementById("units").value) <= 0 || parseFloat(document.getElementById("price/unit").value) <= 0){
+function billCalculator() {
+    if (parseFloat(document.getElementById("units").value) <= 0 || parseFloat(document.getElementById("price/unit").value) <= 0) {
         document.getElementById("units").value = "";
         document.getElementById("price/unit").value = "";
         document.getElementsByClassName("result")[1] = "Result";
@@ -99,38 +99,31 @@ function billCalculator(){
     document.getElementsByClassName("result")[1].textContent = priceLogo + " " + result;
 }
 
-function celsiusToFarenhite(){
-    if (parseFloat(document.getElementById("c").value) <= 0){
-        document.getElementById("c").value = "";
-        document.getElementsByClassName("result")[2].textContent = "Result";
-        alert("enter valid distance details!");
-    }
-    else{
-        celsius = parseFloat(document.getElementById("c").value);
-        let Farenhite = 9/5*celsius + 32;
-        document.getElementsByClassName("result")[2].textContent = `${Farenhite.toFixed(2)} Farenhite`;
-    }
+function celsiusToFarenhite() {
+    celsius = parseFloat(document.getElementById("c").value);
+    let Farenhite = 9 / 5 * celsius + 32;
+    document.getElementsByClassName("result")[2].textContent = `${Farenhite.toFixed(2)} Farenhite`;
 }
 
-function kmToMiles(){
-    if (parseFloat(document.getElementById("km").value) <= 0){
+function kmToMiles() {
+    if (parseFloat(document.getElementById("km").value) <= 0) {
         document.getElementById("km").value = "";
         document.getElementsByClassName("result")[3].textContent = "Result";
         alert("enter valid distance details!");
     }
-    else{
+    else {
         km = parseFloat(document.getElementById("km").value);
-        let miles = 0.618*km;
+        let miles = 0.618 * km;
         document.getElementsByClassName("result")[3].textContent = `${miles} miles`;
     }
 }
 
-function calculateInterest(){
+function calculateInterest() {
     let p = parseFloat(document.getElementById("principal").value);
     let r = parseFloat(document.getElementById("rateOfInterest").value);
     let t = parseFloat(document.getElementById("Time").value);
-    
-    let si = (p*r*t) / 100;
+
+    let si = (p * r * t) / 100;
     let priceLogo = "\u20B9";
     document.getElementsByClassName("result")[4].textContent = priceLogo + " " + si;
 }
